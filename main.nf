@@ -1,4 +1,6 @@
 
+ch_refFILE = Channel.value("$baseDir/refFILE")
+
 inputFilePattern = "./*_{R1,R2}.fastq.gz"
 Channel.fromFilePairs(inputFilePattern)
         .into {  ch_in_PROCESS }
