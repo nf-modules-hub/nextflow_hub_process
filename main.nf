@@ -1,3 +1,10 @@
+#!/usr/bin/env nextflow
+
+/*
+################
+params
+################
+*/
 
 ch_refFILE = Channel.value("$baseDir/refFILE")
 
