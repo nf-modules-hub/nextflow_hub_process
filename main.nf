@@ -8,8 +8,14 @@ params
 
 ch_refFILE = Channel.value("$baseDir/refFILE")
 
-inputFilePattern = "./*_{R1,R2}.fastq.gz"
-Channel.fromFilePairs(inputFilePattern)
+inputUntrimmedRawFilePattern = "./*_{R1,R2}.fastq.gz"
+
+inputTrimmedRawFilePattern = "./*_{R1,R2}.p.fastq.gz"
+
+inputRawFilePattern = params.trimmed ? inputTrimmedRawFilePattern : inputUntrimmedRawFilePattern
+
+
+Channel.fromFilePairs(inputRawFilePattern)
         .into {  ch_in_PROCESS }
 
 
