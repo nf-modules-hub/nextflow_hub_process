@@ -14,7 +14,7 @@ Channel.fromFilePairs(inputFilePattern)
 
 
 
-process process {
+process PROCESS {
 #    publishDir 'results/PROCESS'
 #    container 'PROCESS_CONTAINER'
 
