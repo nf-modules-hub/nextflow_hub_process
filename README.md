@@ -17,7 +17,7 @@ nextflow run https://github.com/nextflow-hub/FIXME
 
 - `resultsDir`
 
-**NOTE**: By default, it stores the result files locally into `results/fastqc` directory.
+**NOTE**: By default, it stores the result files locally into `results/FIXME` directory.
 
 
 ## Contribution
