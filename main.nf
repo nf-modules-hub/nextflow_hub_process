@@ -18,11 +18,15 @@ inputRawFilePattern = params.trimmed ? inputTrimmedRawFilePattern : inputUntrimm
 Channel.fromFilePairs(inputRawFilePattern)
         .into {  ch_in_PROCESS }
 
-
+/*
+###############
+PROCESS
+###############
+*/
 
 process PROCESS {
-#    publishDir 'results/PROCESS'
-#    container 'PROCESS_CONTAINER'
+//    publishDir 'results/PROCESS'
+//    container 'PROCESS_CONTAINER'
 
 
     input:
@@ -33,9 +37,8 @@ process PROCESS {
 
 
     script:
-    #FIXME
     genomeName= genomeFileName.toString().split("\\_")[0]
-    
+
     """
     CLI PROCESS
     """
