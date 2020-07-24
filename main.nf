@@ -1,10 +1,22 @@
 #!/usr/bin/env nextflow
 
 /*
-################
-params
-################
+#==============================================
+code documentation
+#==============================================
 */
+
+
+/*
+#==============================================
+params
+#==============================================
+*/
+
+params.resultsDir = 'results/FIXME'
+params.saveBy = 'copy'
+params.trimmed = true
+
 
 ch_refFILE = Channel.value("$baseDir/refFILE")
 
@@ -16,28 +28,28 @@ inputRawFilePattern = params.trimmed ? inputTrimmedRawFilePattern : inputUntrimm
 
 
 Channel.fromFilePairs(inputRawFilePattern)
-        .into {  ch_in_PROCESS }
+        .into { ch_in_PROCESS }
 
 /*
-###############
+#==============================================
 PROCESS
-###############
+#==============================================
 */
 
 process PROCESS {
-//    publishDir 'results/PROCESS'
-//    container 'PROCESS_CONTAINER'
+    publishDir params.resultsDir, mode: params.saveBy
+    container 'FIXME'
 
 
     input:
     set genomeFileName, file(genomeReads) from ch_in_PROCESS
 
     output:
-    path("""${PROCESS_OUTPUT}""") into ch_out_PROCESS
+    path FIXME into ch_out_PROCESS
 
 
     script:
-    genomeName= genomeFileName.toString().split("\\_")[0]
+    genomeName = genomeFileName.toString().split("\\_")[0]
 
     """
     CLI PROCESS
