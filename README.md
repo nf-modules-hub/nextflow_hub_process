@@ -15,13 +15,6 @@ nextflow run https://github.com/nextflow-hub/FIXME
 
 ## Options
 
-- `trimmed` and `untrimmed` input files
-
-By default the pipeline assumes the files to follow the `*.p.fastq.gz` format. For untrimmed files i.e. `*.fastq.gz` pattern simply add the `trimmed` option as false.
-
-```
-nextflow run https://github.com/nextflow-hub/fastqc --trimmed false
-```
 - `resultsDir`
 
 **NOTE**: By default, it stores the result files locally into `results/fastqc` directory.
