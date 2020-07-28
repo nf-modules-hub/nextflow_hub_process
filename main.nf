@@ -14,20 +14,15 @@ params
 */
 
 params.resultsDir = 'results/FIXME'
-params.saveBy = 'copy'
-params.trimmed = true
+params.saveMode = 'copy'
 
 
 ch_refFILE = Channel.value("$baseDir/refFILE")
 
-inputUntrimmedRawFilePattern = "./*_{R1,R2}.fastq.gz"
 
-inputTrimmedRawFilePattern = "./*_{R1,R2}.p.fastq.gz"
+params.filePattern = "./*_{R1,R2}.fastq.gz"
 
-inputRawFilePattern = params.trimmed ? inputTrimmedRawFilePattern : inputUntrimmedRawFilePattern
-
-
-Channel.fromFilePairs(inputRawFilePattern)
+Channel.fromFilePairs(params.filePattern)
         .into { ch_in_PROCESS }
 
 /*
@@ -37,7 +32,7 @@ PROCESS
 */
 
 process PROCESS {
-    publishDir params.resultsDir, mode: params.saveBy
+    publishDir params.resultsDir, mode: params.saveMode
     container 'FIXME'
 
 
