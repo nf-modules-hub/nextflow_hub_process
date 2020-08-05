@@ -15,12 +15,12 @@ params
 
 params.resultsDir = 'results/FIXME'
 params.saveMode = 'copy'
+params.filePattern = "./*_{R1,R2}.fastq.gz"
 
 
 ch_refFILE = Channel.value("$baseDir/refFILE")
 
 
-params.filePattern = "./*_{R1,R2}.fastq.gz"
 
 Channel.fromFilePairs(params.filePattern)
         .into { ch_in_PROCESS }
