@@ -7,15 +7,10 @@ assignees: ''
 
 ---
 
-**Description of the Issue:**
+**Describe the Issue:**
 
 **Environment (please complete the following information):**
  - OS version: <!-- E.g. macOS, Ubuntu 19.04, etc -->
-   Open a terminal and type any of the following commands:
-   ```
-   cat /etc/*release*
-   uname -a
-   ```
 
  - Nextflow version: To find Nextflow version run
    ```
@@ -23,4 +18,8 @@ assignees: ''
    ```
 
 **Additional Details:**
-<!-- Add any additional details that may be important for us to know. -->
+
+Please include any additional details here.
+```
+nextflow info nextflow-hub/<project-name>
+```
