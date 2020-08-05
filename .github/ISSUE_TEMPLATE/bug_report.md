@@ -13,9 +13,9 @@ assignees: ''
  - OS version: <!-- E.g. macOS, Ubuntu 19.04, etc -->
 
  - Nextflow version: To find Nextflow version run
-   ```
-   nextflow info
-   ```
+ ```
+ nextflow info
+ ```
 
 **Additional Details:**
 
