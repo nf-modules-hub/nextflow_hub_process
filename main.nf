@@ -23,7 +23,7 @@ ch_refFILE = Channel.value("$baseDir/refFILE")
 
 
 Channel.fromFilePairs(params.filePattern)
-        .into { ch_in_PROCESS }
+        .set { ch_in_PROCESS }
 
 /*
 #==============================================
