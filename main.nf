@@ -9,18 +9,56 @@ code documentation
 
 /*
 #==============================================
-params
+PARAMS
 #==============================================
 */
 
+
+/*
+#----------------------------------------------
+flags
+#----------------------------------------------
+*/
+
+params.index = false
+params.faidx = false
+params.sort = false
+
+
+/*
+#----------------------------------------------
+directories
+#----------------------------------------------
+*/
+
 params.resultsDir = 'results/FIXME'
+
+
+/*
+#----------------------------------------------
+file patterns
+#----------------------------------------------
+*/
+
+params.refFasta = "NC000962_3.fasta"
+params.readsFilePattern = "./*_{R1,R2}.fastq.gz"
+
+/*
+#----------------------------------------------
+misc
+#----------------------------------------------
+*/
+
 params.saveMode = 'copy'
-params.filePattern = "./*_{R1,R2}.fastq.gz"
 
+/*
+#----------------------------------------------
+channels
+#----------------------------------------------
+*/
 
-ch_refFILE = Channel.value("$baseDir/refFILE")
-
-
+Channel.value("$workflow.launchDir/$params.refFasta")
+        .set { ch_refFasta }
 
 Channel.fromFilePairs(params.filePattern)
         .set { ch_in_PROCESS }
