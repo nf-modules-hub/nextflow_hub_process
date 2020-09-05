@@ -20,10 +20,7 @@ flags
 #----------------------------------------------
 */
 
-params.index = false
-params.faidx = false
-params.sort = false
-
+params.FLAG = false
 
 /*
 #----------------------------------------------
