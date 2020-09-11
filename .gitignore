@@ -1,2 +1,7 @@
-_resources
 .idea
+.nextflow/
+.nextflow.log*
+
+_resources
+results/
+work/
