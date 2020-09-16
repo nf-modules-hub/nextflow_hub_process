@@ -57,7 +57,7 @@ channels
 Channel.value("$workflow.launchDir/$params.refFasta")
         .set { ch_refFasta }
 
-Channel.fromFilePairs(params.filePattern)
+Channel.fromFilePairs(params.readsFilePattern)
         .set { ch_in_PROCESS }
 
 /*
